@@ -86,6 +86,22 @@ Baaki steps (API key set karna etc.) Windows jaise same hain.
 
 ---
 
+## Deploy to Vercel
+
+The Vercel deployment uses Neon PostgreSQL for persistent chat history and password protection for this personal, single-user app.
+
+1. Create a project at [Neon](https://neon.tech/) and copy its **pooled** PostgreSQL connection string. Keep it private.
+2. In [Vercel](https://vercel.com/), import the `HARIOM45-67/hariom-ai` GitHub repository and set **Root Directory** to `hariom-ai`.
+3. Before deploying, add these environment variables in the Vercel project settings for **Production** (and Preview too, if you enable preview deployments):
+   - `DATABASE_URL` — the pooled Neon connection string.
+   - `GEMINI_API_KEY` — your Google Gemini API key.
+   - `SITE_PASSWORD` — a long, private password for your personal chatbot.
+4. Deploy the project. Open its Vercel URL and enter `hariom` as the username and your `SITE_PASSWORD` when the browser asks for authentication.
+
+Do not publish or share these secrets. Chat history is kept in the Neon database and is shared by anyone you give the password to. Changing `SITE_PASSWORD` does not create separate user accounts or separate chat histories.
+
+---
+
 ## Manual Setup (agar script na chale)
 
 Agar koi reason se batch/script file na chale, to ye commands manually chala sakte hain:
@@ -119,12 +135,15 @@ Phir browser mein **http://127.0.0.1:5000** kholin.
 ```
 hariom-ai/
 ├── app.py                # Flask backend (server, AI integration, database)
+├── api/
+│   └── index.py          # Vercel Flask entry point
 ├── templates/
 │   └── index.html        # Chat UI page
 ├── static/
 │   ├── style.css         # All styling (responsive, modern)
 │   └── script.js         # Frontend logic (chat, history, copy, regenerate)
 ├── requirements.txt      # Python dependencies
+├── vercel.json           # Vercel routing and asset configuration
 ├── .env.example          # Template for API key config
 ├── .gitignore            # Files to exclude from version control
 ├── run_windows.bat       # One-click Windows setup & run
