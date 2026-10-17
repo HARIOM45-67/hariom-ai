@@ -1,4 +1,4 @@
-# Hariom AI Chatbot
+# Hariom AI
 
 A modern, personal AI chatbot (like ChatGPT) built with **Python Flask**, **HTML/CSS/JS**, and **SQLite** for persistent chat history. Supports **Hindi and English** conversations using the **Google Gemini AI** API.
 
@@ -33,15 +33,15 @@ Agar Python installed nahi hai:
 
 ### Step 2: ZIP file extract karein
 
-1. `apna-ai-chatbot.zip` file ko apne computer mein download karein
+1. `hariom-ai.zip` file ko apne computer mein download karein
 2. Zip par right-click karein → **"Extract All..."** chunein
-3. Jis folder mein extract kiya, wahan `apna-ai-chatbot` naam ka folder hoga
+3. Jis folder mein extract kiya, wahan `hariom-ai` naam ka folder hoga
 
 ### Step 3: API key set karein
 
 1. **https://aistudio.google.com/app/apikey** par jayein (Google account se login karein)
 2. **"Create API Key"** par click karein aur ek free key banayein
-3. `apna-ai-chatbot` folder ke andar `.env.example` file dikhegi
+3. `hariom-ai` folder ke andar `.env.example` file dikhegi
 4. Uski copy bana kar naam rakhein `.env` (naam mein dot hai, koi extension nahi)
 5. `.env` file ko **Notepad** mein kholein
 6. `GEMINI_API_KEY=your_api_key_here` wali line mein `your_api_key_here` hata kar apni key paste karein
@@ -54,7 +54,7 @@ Agar Python installed nahi hai:
 
 ### Step 4: App chalayein
 
-1. `apna-ai-chatbot` folder mein jayein
+1. `hariom-ai` folder mein jayein
 2. **`run_windows.bat`** par double-click karein
 3. Pehli baar mein ye khud:
    - Virtual environment banayega
@@ -73,7 +73,7 @@ Jis black window (command prompt) mein server chal raha hai, usme **Ctrl+C** dab
 
 ```bash
 # Terminal mein folder par jayein
-cd apna-ai-chatbot
+cd hariom-ai
 
 # Script ko executable banayein (sirf ek baar)
 chmod +x run_mac_linux.sh
@@ -117,7 +117,7 @@ Phir browser mein **http://127.0.0.1:5000** kholin.
 ## Project Structure
 
 ```
-apna-ai-chatbot/
+hariom-ai/
 ├── app.py                # Flask backend (server, AI integration, database)
 ├── templates/
 │   └── index.html        # Chat UI page

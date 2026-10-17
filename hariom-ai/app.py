@@ -1,5 +1,5 @@
 """
-Hariom AI Chatbot - Flask Backend
+Hariom AI - Flask Backend
 ---------------------------------
 Serves the chat UI, stores chat history in SQLite, and proxies
 conversation requests to the Google Gemini API so the API key

@@ -1,10 +1,10 @@
 @echo off
 chcp 65001 >nul 2>&1
-title Hariom AI Chatbot - Setup %26 Run
+title Hariom AI - Setup %26 Run
 setlocal EnableDelayedExpansion
 
 REM ============================================================
-REM  Hariom AI Chatbot - One-click Windows setup %26 run script
+REM  Hariom AI - One-click Windows setup %26 run script
 REM  - Checks Python is installed
 REM  - Creates a virtual environment if needed
 REM  - Installs dependencies
@@ -17,7 +17,7 @@ cd /d "%~dp0"
 
 echo.
 echo ========================================
-echo   Hariom AI Chatbot - Setup %26 Run
+echo   Hariom AI - Setup %26 Run
 echo ========================================
 echo.
 
@@ -134,7 +134,7 @@ REM ---- Start server ----
 echo [5/5] Server start kar rahe hain...
 echo.
 echo ========================================
-echo   Hariom AI Chatbot chal raha hai!
+echo   Hariom AI chal raha hai!
 echo ========================================
 echo.
 echo Browser mein http://127.0.0.1:5000 khulega.

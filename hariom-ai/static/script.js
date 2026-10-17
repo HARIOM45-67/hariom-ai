@@ -1,4 +1,4 @@
-/* Hariom AI Chatbot - Frontend Logic
+/* Hariom AI - Frontend Logic
    Handles chat UI, history, sending messages, copy & regenerate.
    Uses safe DOM methods (textContent) — never injects chat HTML. */
 

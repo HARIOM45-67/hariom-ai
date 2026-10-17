@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-#  Hariom AI Chatbot - One-click setup & run (macOS / Linux)
+#  Hariom AI - One-click setup & run (macOS / Linux)
 #  - Checks Python is installed
 #  - Creates a virtual environment if needed
 #  - Installs dependencies
@@ -14,7 +14,7 @@ cd "$(dirname "$0")"
 
 echo ""
 echo "========================================"
-echo "  Hariom AI Chatbot - Setup & Run"
+echo "  Hariom AI - Setup & Run"
 echo "========================================"
 echo ""
 
@@ -102,7 +102,7 @@ echo ""
 echo "[5/5] Starting server..."
 echo ""
 echo "========================================"
-echo "  Hariom AI Chatbot is running!"
+echo "  Hariom AI is running!"
 echo "========================================"
 echo ""
 echo "Open http://127.0.0.1:5000 in your browser."
