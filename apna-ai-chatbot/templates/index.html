@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hariom AI Chatbot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo"><span class="logo-dot"></span> Hariom AI</h1>
+        <button class="icon-btn" id="closeSidebarBtn" title="Close menu" aria-label="Close menu">&#10005;</button>
+      </div>
+      <button class="new-chat-btn" id="newChatBtn">+ New Chat</button>
+      <div class="chat-history" id="chatHistory">
+        <p class="history-empty">No chats yet</p>
+      </div>
+      <div class="sidebar-footer">
+        <button class="danger-btn" id="clearAllBtn">Clear All Chats</button>
+      </div>
+    </aside>
+
+    <!-- Main chat area -->
+    <main class="chat-main">
+      <header class="chat-header">
+        <button class="icon-btn menu-btn" id="menuBtn" title="Open menu" aria-label="Open menu">&#9776;</button>
+        <h2 class="chat-title" id="chatTitle">New Chat</h2>
+        <button class="icon-btn" id="clearChatBtn" title="Clear this chat" aria-label="Clear this chat">&#128465;</button>
+      </header>
+
+      <div class="messages" id="messages">
+        <!-- Welcome screen -->
+        <div class="welcome" id="welcomeScreen">
+          <div class="welcome-logo"><span class="logo-dot big"></span></div>
+          <h2>Hariom AI Chatbot</h2>
+          <p>Hindi aur English mein baat karein. Ask me anything!</p>
+          <div class="suggestions" id="suggestions">
+            <button class="suggestion-chip" data-text="Namaste! Aap kaise hain?">Namaste! Aap kaise hain?</button>
+            <button class="suggestion-chip" data-text="Explain machine learning in simple Hindi.">Machine learning samjhao</button>
+            <button class="suggestion-chip" data-text="Write a short poem about the moon.">Write a poem about the moon</button>
+            <button class="suggestion-chip" data-text="Give me 3 healthy breakfast ideas.">Healthy breakfast ideas</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input area -->
+      <div class="input-area">
+        <div class="input-wrapper">
+          <textarea
+            id="messageInput"
+            placeholder="Type your message... (Enter to send, Shift+Enter for new line)"
+            rows="1"
+            maxlength="4000"
+          ></textarea>
+          <button id="sendBtn" class="send-btn" title="Send" aria-label="Send message">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </button>
+        </div>
+        <p class="input-hint">Hariom AI can make mistakes. Important info ko verify zaroor karein.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- API key setup banner -->
+  <div class="setup-banner" id="setupBanner" hidden>
+    <div class="setup-banner-inner">
+      <h3>API Key setup karna padega</h3>
+      <p>Aapne abhi tak AI API key set nahi ki hai. Asli AI jawab dene ke liye ye zaruri hai.</p>
+      <ol>
+        <li>Google Gemini API key lein — <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">yahan free key banayein</a>.</li>
+        <li>Project folder mein <code>.env.example</code> file ko copy karke uska naam <code>.env</code> rakhein.</li>
+        <li><code>.env</code> file mein <code>GEMINI_API_KEY=</code> ke baad apni key paste karein.</li>
+        <li>Server ko dobara chalu karein (batch file wapas chalayein).</li>
+      </ol>
+      <button class="primary-btn" id="dismissBannerBtn">Samajh gaya</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
